@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no" name="viewport">
+<link rel="stylesheet" type="text/css" href="css/base.css" />
+<title>p5</title>
+<style>
+	* { margin: 0px; padding: 0px}
+	html,body{ width: 100%; height: 100%;}
+	#div1 {
+		background: #F00;
+		color: #FFF;
+		display: none;
+		position: absolute;
+	}
+	.btn-info{margin-top: 700px;}
+	#aa1{height: 2000px;}
+	.layer{ position: absolute; z-index: 9;}
+	.layerBg{ 
+		position: fixed; left: 0; top: 0; right: 0; bottom: 0; 
+		background: rgba(0,0,0,.6); display: none;}
+</style>
+</head>
+
+<body>
+
+<button type="button" class="btn btn-info">信息按钮</button>
+
+
+<div id="aa1">
+	asdadsadsasd
+</div>
+
+
+
+<div class="layerBg"> 我是当前窗口啊我是当前窗口啊我是当前窗口啊我是当前窗口啊我是当前窗口啊我是当前窗口啊<br>我是当前窗口啊我是当前窗口啊我是当前窗口啊<br>我是当前窗口啊我是当前窗口啊我是当前窗口啊<br>我是当前窗口啊我是当前窗口啊我是当前窗口啊<br>我是当前窗口啊我是当前窗口啊我是当前窗口啊 <br>我是当前窗口啊我是当前窗口啊我是当前窗口啊我是当前窗口啊
+	<div class="layer" id="div1">我是弹出窗口1111啊<br>我是弹出窗口1111啊<br>我是弹出窗口1111啊<br>我是弹出窗口1111啊<br>我是弹出窗口1111啊<br>我是弹出窗口1111啊<br>我是弹出窗口1111啊</div>
+	<div class="layer" id="div2">我是弹出窗口2222啊<br>我是弹出窗口2222啊<br>我是弹出窗口2222啊<br>我是弹出窗口2222啊<br>我是弹出窗口2222啊</div>
+</div>
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+<!--<Script type="text/javascript">
+	function popup(popupName) {
+		var winHeight = $(".wrap").height(); //获取当前窗口高度 
+		var winWidth = $(".wrap").width(); //获取当前窗口宽度 
+		var popupHeight = popupName.height(); //获取弹出层高度 
+		var popupWidth = popupName.width(); //获取弹出层宽度 
+		positionTop = (winHeight - popupHeight) / 2;
+		positionLeft = (winWidth - popupWidth) / 2;
+		popupName.css({ "left": positionLeft, "top": positionTop, "display": "block" }); //设置position 
+	}
+	$(function() {
+		$(".btn1").click(function() {
+			popup($("#div1"));
+		});
+		$(".btn2").click(function() {
+			popup($("#div2"));
+		});
+	});
+</script>-->
+<Script type="text/javascript">
+	function popup(ele) {
+		var _scrollHeight = $(document).scrollTop(), //获取当前窗口距离页面顶部高度 
+			_windowHeight = $(window).height(), //获取当前窗口高度 
+			_windowWidth = $(window).width(), //获取当前窗口宽度 
+			_popupHeight = ele.height(), //获取弹出层高度 
+			_popupWeight = ele.width(); //获取弹出层宽度 
+		_posiTop = (_windowHeight - _popupHeight) / 2 + _scrollHeight;
+		_posiLeft = (_windowWidth - _popupWeight) / 2;
+		$(".layerBg").show();
+		ele.css({ "left": _posiLeft + "px", "top": _posiTop + "px", "display": "block" }); //设置position 
+	}
+	$(function() {
+		$(".btn-info").click(function() {
+			popup($("#div1"));
+		});
+	});
+</script>
+</body>
+
+</html>

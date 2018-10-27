@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/p3.css" />
+		<link href="js/datatables/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="js/layui/css/layui.css" />
+		<!--<link rel="stylesheet" type="text/css" href="js/layui/css/layui.mobile.css"/>-->
+		<title>p3</title>
+		<style type="text/css">
+			.myGuanZhu{ width: 1200px; margin: 40px auto;}
+			.layui-table-main{}
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="content-box">
+			<table id="demo" lay-filter="test"></table>
+		</div>
+		
+		
+		<div class="myGuanZhu myTableBox">
+     		<table class="table table-hover table-striped table-bordered table-sort">
+     				<thead>
+     					<tr class="tc">
+     						<th class="width-1">照片</th>
+     						<th>身份证号</th>
+     						<th>姓名</th>
+     						<th>补充类型</th>
+     						<th>补充时间</th>
+     						<th>操作</th>
+     					</tr>
+     				</thead>	
+     				<tbody>	
+     					<tr class="tc">
+     						<td>98911111</td>
+     						<td>68629338888311</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-8</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>98911112</td>
+     						<td>68629338888322</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-5</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1313123</td>
+     						<td>68629338888333</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-4</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231314</td>
+     						<td>68629338888344</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-3</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>121123135</td>
+     						<td>68629338888355</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-1</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>121123136</td>
+     						<td>68629338888366</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-11</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>12112317</td>
+     						<td>68629338888311</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-8</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>121123138</td>
+     						<td>68629338888322</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-5</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>121123139</td>
+     						<td>68629338888333</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-4</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888344</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-3</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888355</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-1</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888366</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-11</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888311</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-8</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888322</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-5</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888333</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-4</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888344</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-3</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888355</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-1</td>
+     						<td>查看档案</td>
+     					</tr>
+     					<tr class="tc">
+     						<td>1211231313123</td>
+     						<td>68629338888366</td>
+     						<td>热孜亚毕布力</td>
+     						<td>基本信息</td>
+     						<td>2017-12-11</td>
+     						<td>查看档案</td>
+     					</tr>
+     				</tbody>
+     			</table>
+		</div>
+		
+		
+
+
+		<script src="js/lib/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<!--<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>-->
+		<!--<script src="http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>-->
+		<script src="js/layui/layui.js" type="text/javascript"></script>
+		<script src="js/lib/jquery.nicescroll.min.js" type="text/javascript"></script>
+		<script src="js/datatables/jquery.dataTables.min.js"></script>
+		<script src="js/p3.js" type="text/javascript"></script>
+	</body>
+
+</html>

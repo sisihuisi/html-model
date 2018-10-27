@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,shrink-to-fit=no" name="viewport">
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/p3.css" />
+		<title>select</title>
+		<style type="text/css">
+			.warp-box {
+				width: 1200px;
+				margin: 50px auto 0 auto;
+			}
+			.list1{ margin: 20px 0;}
+			.list1 :nth-of-type(1){color:red;}
+			/*.list1 :nth-child(1){color:blue;}*/
+			.cc {
+				height: 2000px;
+			}
+			.style {
+				border: 1px solid #f00;
+				border-bottom: 2px solid #3bd1b2;
+				color: #fff;
+				border: 1px solid #1BBD9B;
+				background: #1BBD9B;
+			}
+			.px-table-list {
+				border: 1px solid #00689F;
+			}
+			.px-table-list .px-tips {
+				text-align: center;
+				vertical-align: middle;
+				border: 1px solid #ccc;
+				display: inline-block;
+			}
+			.row {
+				text-align: center;
+			}
+			.tips {
+				display: inline-block;
+				border: 1px solid #ccc;
+				background-color: #C0CEBB;
+				padding: 0 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="warp-box">
+			
+			<div class="list1"><p>第1个p</p><p>第2个p</p><span>第1个span</span><p>第3个p</p><span>第2个span</span></div>
+			
+			
+			
+			<form class="form-horizontal">
+			    <div class="form-group">
+			        <label class="col-sm-2 control-label" for="name">信息标题</label>
+			        <div class="col-sm-10">
+			        	<div class="row">
+			        		<div class="col-sm-6">
+			        			 <select class="form-control" id="selecType1">
+				                     <option value="-1">选择</option>
+				                  </select>
+			        		</div>
+			        		<div class="col-sm-6">
+			        			 <select class="form-control" id="selecType2">
+				                     <option value="-1">选择</option>
+				                  </select>
+			        		</div>
+			        	</div>
+			        </div>
+			    </div>
+			    <div class="form-group">
+			        <label class="col-sm-2 control-label" for="name">人物单位</label>
+			        <div class="col-sm-10">
+			            <input type="text" class="form-control" id="inputName" id="name" placeholder="请输入">
+			        </div>
+			    </div>
+			</form>
+			
+			
+			
+			
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="form-group">
+							<select class="form-control" id="selectbb">
+								<option value="a1">选择1</option>
+								<option value="a2">选择2</option>
+								<option value="a3">选择3</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-xs-4"> <button type="button" class="btn btn-info" id="btn">信息按钮</button> </div>
+					<div class="col-xs-4"> 内容333333 </div>
+				</div>
+			</div>
+			<div class="px-table-list" id="px-table-list">
+				<div class='px-tips'>暂时没有软件资产！</div>
+				<div class="p1" id="p1">
+					<div class="p2">
+						<div class="p3">p3pppppppppppppppppppp</div>
+					</div>
+				</div>
+				<div class="p1">
+					<div class="p2">
+						<div class="p3">p3pppppppppppppppppppp</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-box">
+				<table id="demo" lay-filter="test"></table>
+			</div>
+			<form class="form-horizontal">
+				<div class="form-group"> <label class="col-xs-1 control-label" for="name">出生日期</label>
+					<div class="col-xs-2"> <input type="text" class="form-control no-all edate startDate" id="startDate" placeholder="开始时间"></div>
+					<div class="col-xs-2"> <input type="text" class="form-control no-all edate endDate" id="endDate" placeholder="结束时间"></div>
+				</div>
+			</form> <button type="button" class="btn btn-info">信息按钮</button>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="tips" id="tip1">内容11111</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="tips" id="tip2">内容11111</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="tips" id="tip3">内容11111</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="tips" id="tip4">内容11111</div>
+					</div>
+				</div>
+			</div> <input type="text" class="form-control " id="name" placeholder="请输入"> <input type="text" name="inp1" id="inp1" />
+			<div class="cc"></div>
+		</div>
+		<script src="js/lib/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="js/lib/jquery.nicescroll.min.js" type="text/javascript"></script>
+		<script src="js/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+		<script src="js/layer/layer.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				var data1 = [{ "value": "-1", "name": "请选择" }, { "value": "C0201", "name": "软件开发服务" }, { "value": "C0202", "name": "信息系统集成实施服务" }, { "value": "C0203", "name": "数据处理服务" }, { "value": "C0204", "name": "信息化工程监理服务" }, { "value": "C0205", "name": "测试评估认证服务" }, { "value": "C0206", "name": "运行维护服务" }, { "value": "C0207", "name": "运营服务" }, { "value": "C0208", "name": "信息技术咨询服务" }, { "value": "C0209", "name": "呼叫中心服务" }, { "value": "C0302", "name": "互联网信息服务" }, { "value": "C0299", "name": "其他信息技术服务" }];
+				var data2 = [{ "value": "-1", "first": "-1", "name": "请选择" }, { "value": "C020101", "first": "C0201", "name": "基础软件开发服务" }, { "value": "C020102", "first": "C0201", "name": "支撑软件开发服务" }, { "value": "C020103", "first": "C0201", "name": "应用软件开发服务" }, { "value": "C020104", "first": "C0201", "name": "嵌入式软件开发服务" }, { "value": "C020105", "first": "C0201", "name": "信息安全软件开发服务" }, { "value": "C020201", "first": "C0202", "name": "基础环境集成实施服务" }, { "value": "C020202", "first": "C0202", "name": "硬件集成实施服务" }, { "value": "C020203", "first": "C0202", "name": "软件集成实施服务" }, { "value": "C020204", "first": "C0202", "name": "安全集成实施服务" }, { "value": "C020299", "first": "C0202", "name": "其他系统集成实施服务" }, { "value": "C020301", "first": "C0203", "name": "存储服务" }, { "value": "C020302", "first": "C0203", "name": "数据加工处理服务" }, { "value": "C020303", "first": "C0203", "name": "数字内容加工处理服务" }, { "value": "C020399", "first": "C0203", "name": "其他数据处理服务" }, { "value": "C020601", "first": "C0206", "name": "基础环境运维服务" }, { "value": "C020602", "first": "C0206", "name": "硬件运维服务" }, { "value": "C020603", "first": "C0206", "name": "软件运维服务" }, { "value": "C020604", "first": "C0206", "name": "安全运维服务" }, { "value": "C020699", "first": "C0206", "name": "其他运行维护服务" }, { "value": "C020701", "first": "C0207", "name": "软件运营服务" }, { "value": "C020702", "first": "C0207", "name": "平台运营服务" }, { "value": "C020703", "first": "C0207", "name": "基础设施运营服务" }, { "value": "C020799", "first": "C0207", "name": "其他运营服务" }, { "value": "C020801", "first": "C0208", "name": "信息化规划服务" }, { "value": "C020802", "first": "C0208", "name": "信息系统设计服务" }, { "value": "C020803", "first": "C0208", "name": "信息技术管理咨询服务" }, { "value": "C020899", "first": "C0208", "name": "其他信息技术咨询服务" }];
+				
+				
+				function initSelect1(obj1,data1,obj2,data2){
+					obj2.hide();
+					init1(obj1,data1);
+					function init1(obj1,data1){
+						var temp = "";
+	                    for (var i = 0; i < data1.length; i++) {
+	                        var data = data1[i];
+	                        if(data.value && data.name) {
+	                            temp += '<option value="' + data.value + '">' + data.name + '</option>';
+	                        }
+	                    }
+                        obj1.html(temp);
+					}
+					
+					obj1.change(function(){
+						obj2.hide();
+						var temp = "";
+	                    for (var i = 0; i < data2.length; i++) {
+	                        var data = data2[i];
+	                        if(obj1.val()==data.first){
+	                        	temp += '<option value="' + data.value + '">' + data.name + '</option>';
+	                        }
+	                    }
+                        obj2.html(temp);
+                        if(obj2.val()){
+                        	obj2.show();
+                        }
+                       
+					})
+					
+				}
+				
+				initSelect1($("#selecType1"),data1,$("#selecType2"),data2)
+				
+				
+//                  var _html2 = "";
+//                  for (var i = 0; i < data2.length; i++) {
+//                      var dat = data2[i];
+//                      if($("#selecType1").val()==dat.first){
+//                      	_html2 += '<option value="' + dat.value + '">' + dat.name + '</option>';
+//                      }
+//                  }
+//                  $("#selecType2").html(_html2);
+//                  
+//                  
+//                  $("#selecType1").val("C0206");
+				
+				
+				function checkData(data){
+			        if($.type(data)=='null' || $.type(data)=='undefined' || data.trim()=="" ){
+			            return "无数据"
+			        }
+			        return data
+			    }
+				
+				function isEmpty(data){
+			        if($.type(data)=='null' || $.type(data)=='undefined' || data.trim()=="" ){
+			            return true
+			        }
+			        return false
+			    }
+				
+				var aa = "";
+				var bb = null;
+				var cc = undefined;
+				var dd = "     ";
+				var txt = "提交";
+				console.log(checkData(aa), checkData(bb), checkData(cc), checkData(dd), checkData(txt) );
+				console.log(isEmpty(aa), isEmpty(bb), isEmpty(cc), isEmpty(dd), isEmpty(txt) );
+				
+//				if(typeof obj=="undefined"){
+//					var obj={};
+//					alert(obj)
+//				}
+
+                var obj={a:1, b:2};
+				var obj=obj||{};
+				console.log("obj[a]:"+obj[a])
+				
+				
+				$("#btn").html(aa || txt || bb || cc)
+				$("#selectbb").val("a2");
+				var aa = $("#selectbb").val();
+				var bb = $("#selectbb option:checked").text();
+				console.log(aa, bb);
+				
+				
+				$("#selectbb").change(function() {
+					var aa = $("#selectbb").val();
+					var bb = $("#selectbb option:checked").text();
+					console.log(aa, bb);
+				})
+				$("#selectbb").val("a3")
+				
+				
+				var $box = $("#p1");
+				$(".p1").click(function() {
+					$("#p1").find(".p2,.p3").toggleClass("style");
+				})
+				
+				
+				layer.config({
+					extend: 'moon/style.css',
+					skin: 'layer-ext-moon'
+				});
+				$("#tip1").click(function() {
+					var index = layer.load();
+					setTimeout(closey, 4000)
+
+					function closey() {
+						layer.close(index)
+					}
+				})
+				$("#tip3").mouseover(function() {
+					layer.tips('只想提示地精准些', $(this), { tips: [1, '#3595CC'] });
+				})
+				$("#tip4").click(function() {
+					layer.tips('我是另外一个tips，只不过我长得跟之前那位稍有些不一样。', $(this), {
+						tips: [1, '#3595CC'],
+						time: 9999000
+					});
+				})
+				$(".btn").click(function() {
+					var index = layer.open({
+						type: 1,
+						anim: 1,
+						title: '新增重点阵地',
+						area: ["924px", "512px"],
+						btn: ["保存", "重置"],
+						content: '内容内容',
+						success: function() {
+							$('.layui-layer .layui-layer-content').niceScroll({ cursorcolor: '#356abe', cursorborder: '#000', cursorwidth: 8 });
+						}
+					});
+				});
+				$(".startDate").click(function() {
+					WdatePicker({ dateFmt: 'yyyy-MM-dd', skin: 'blue', maxDate: "#F{$dp.$D(\'endDate\')}" })
+				})
+				$(".endDate").click(function() {
+					WdatePicker({ dateFmt: 'yyyy-MM-dd', skin: 'green', minDate: "#F{$dp.$D(\'startDate\')}" })
+				})
+				var obj = { a: b },
+					a = [],
+					b = '';
+				obj.x = function() {
+					alert(123)
+				}
+				var flag = obj.hasOwnProperty('y');
+				var ac = a.constructor === Array,
+					bc = b.constructor;
+				//					 console.log(bc);
+				//一个未命名的函数直接量使用callee属性引用它自身
+				// 以便它能够递归
+				var factorial = function(x) {
+					if(x < 2) { return 1 } else {
+						return x * arguments.callee(x - 1);
+					}
+				}
+				var y = factorial(5); // 返回 120
+				//		console.log(y);
+				var mm = null;
+				var nn = undefined;
+				var bb = 0;
+
+				function notNullUndefined(ele) {
+					if($.type(ele) !== 'null' && $.type(ele) !== 'undefined') {
+						return true
+					}
+					return false
+				}
+			});
+		</script>
+	</body>
+
+</html>

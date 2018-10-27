@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<title>123</title>
+		<style>
+			.emailist{ 
+				border:1px solid #bdbdbd; border-radius: 4px; background-color:#fff; color:#666; font-size:14px; overflow:hidden;
+			}
+			.emailist li{padding:2px 11px; cursor:pointer;}
+			.emailist .on, .emailist li:hover{background-color:#eee;}
+			 html,body{height: 100%;}
+			 #community-mid{ width: 1200px; margin: 50px auto 0 auto;}
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="community-mid">
+         <h3><i></i>基本信息</h3> 
+        <div id="createOPBody" style="">
+            <ul class="font14 clearfix">
+            	 <li style="background: #ccc; margin: 40px 0; padding: 10px;">
+                	选择的是：<span id="workType"></span>
+                </li>
+                <li>
+                    <span id="workTypeLabel" class="label"><em class="red">*</em> 所属类目：</span>
+                    <select id="workType1">
+                    	<option value="-1">请选择</option>
+                    </select>--
+                    <select id="workType2">
+                    	<option value="-1">请选择</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+       
+        <div class="container-fluid">
+        	<form class="form-horizontal">
+        	    <div class="form-group">
+        	        <label class="col-sm-2 control-label" for="name">信息标题</label>
+        	        <div class="col-sm-4">
+        	            <input type="email" class="form-control email" id="name" placeholder="请输入" autocomplete="off" />
+        	        </div>
+        	    </div>
+        	    <div class="form-group">
+        	        <label class="col-sm-2 control-label" for="name">人物单位</label>
+        	        <div class="col-sm-4">
+        	            <input type="email" class="form-control email" id="name" placeholder="请输入" autocomplete="off" />
+        	        </div>
+        	    </div>
+        	</form>
+        </div>
+
+    </div>
+
+
+		<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+		<script src="js/jquery.mailAutoComplete-4.0.js" type="text/javascript" ></script>
+		<script src="js/base.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+//			火狐里面:window.screen.availHeight-76				
+//			360里面:window.screen.availHeight-32		
+//			谷歌里面:window.screen.availHeight-60
+			
+			var data1=[{"value":"-1","name":"请选择"},{"value":"C0201","name":"软件开发服务"},{"value":"C0202","name":"信息系统集成实施服务"},{"value":"C0203","name":"数据处理服务"},{"value":"C0204","name":"信息化工程监理服务"},{"value":"C0205","name":"测试评估认证服务"},{"value":"C0206","name":"运行维护服务"},{"value":"C0207","name":"运营服务"},{"value":"C0208","name":"信息技术咨询服务"},{"value":"C0209","name":"呼叫中心服务"},{"value":"C0302","name":"互联网信息服务"},{"value":"C0299","name":"其他信息技术服务"}];
+			var data2=[{"value":"-1","first":"-1","name":"请选择"},{"value":"C020101","first":"C0201","name":"基础软件开发服务"},{"value":"C020102","first":"C0201","name":"支撑软件开发服务"},{"value":"C020103","first":"C0201","name":"应用软件开发服务"},{"value":"C020104","first":"C0201","name":"嵌入式软件开发服务"},{"value":"C020105","first":"C0201","name":"信息安全软件开发服务"},{"value":"C020201","first":"C0202","name":"基础环境集成实施服务"},{"value":"C020202","first":"C0202","name":"硬件集成实施服务"},{"value":"C020203","first":"C0202","name":"软件集成实施服务"},{"value":"C020204","first":"C0202","name":"安全集成实施服务"},{"value":"C020299","first":"C0202","name":"其他系统集成实施服务"},{"value":"C020301","first":"C0203","name":"存储服务"},{"value":"C020302","first":"C0203","name":"数据加工处理服务"},{"value":"C020303","first":"C0203","name":"数字内容加工处理服务"},{"value":"C020399","first":"C0203","name":"其他数据处理服务"},{"value":"C020601","first":"C0206","name":"基础环境运维服务"},{"value":"C020602","first":"C0206","name":"硬件运维服务"},{"value":"C020603","first":"C0206","name":"软件运维服务"},{"value":"C020604","first":"C0206","name":"安全运维服务"},{"value":"C020699","first":"C0206","name":"其他运行维护服务"},{"value":"C020701","first":"C0207","name":"软件运营服务"},{"value":"C020702","first":"C0207","name":"平台运营服务"},{"value":"C020703","first":"C0207","name":"基础设施运营服务"},{"value":"C020799","first":"C0207","name":"其他运营服务"},{"value":"C020801","first":"C0208","name":"信息化规划服务"},{"value":"C020802","first":"C0208","name":"信息系统设计服务"},{"value":"C020803","first":"C0208","name":"信息技术管理咨询服务"},{"value":"C020899","first":"C0208","name":"其他信息技术咨询服务"}];
+			function setSelect(obj,data){
+		        var _html='';
+				for(var i=0; i<data.length; i++ ){
+					var data=data[i];
+				　　_html+='<option value="'+ data.value +'">'+ data.name +'</option>';
+				}
+				obj.html(_html);
+			}   
+			
+			$(function() {
+		        var url1="http://nj.jfh.com/jftender/bizdict/firstWorkType";
+		        var url2="http://nj.jfh.com/jftender/bizdict/secondWorkType";
+		        
+		        var _html='';
+				for(var i=0; i<data1.length; i++ ){
+					var data=data1[i];
+				　　_html+='<option value="'+ data.value +'">'+ data.name +'</option>';
+				};
+				$("#workType1").html(_html);
+				
+				var ss='C0302';
+				
+				$("#workType1").val(ss);
+				
+//				$("#workType1 option[value=" + 'C0302' + "]").prop("selected", true);
+				
+				
+				$("#workType1").change(function(){
+					var val=$(this).val(),
+					    _html='';
+					for(var i=0; i<data2.length; i++ ){
+						var data=data2[i];
+						if(data.first==val){
+							_html+='<option value="'+ data.value +'">'+ data.name +'</option>';
+						}
+						$("#workType2").html(_html);
+					};
+					
+				})
+				
+				
+				
+				
+				$("#workType1,#workType2").change(function(){
+					var worktype = $("#workType1 option:checked").text();
+	                if($("#workType2").val()){
+	                    worktype += "&nbsp;--&nbsp;" + $("#workType2 option:checked").text();
+	                }
+	                $("#workType").html(worktype);
+		        })
+				
+				
+				
+				
+				
+				$(".email").mailAutoComplete( );
+
+			});
+		</script>
+
+	</body>
+
+</html>
