@@ -50,7 +50,37 @@ button[disabled], html input[disabled] {cursor: default;}
 button::-moz-focus-inner, input::-moz-focus-inner {border: 0;padding: 0;}
 
 
-.clear{ clear: both;display: block;overflow: hidden;visibility: hidden;width: 0;height: 0; }
+.clear{ clear: both; display: block;overflow: hidden; visibility: hidden;width: 0;height: 0; font-size: 0; }
+.clearfix:before,.clearfix:after{display: table; content: " ";}
+.clearfix:after{clear: both;}
+
+.hide { display: none;}
+.display-block { display: block;}
+.display-inline { display: inline-block;}
+.hidden { display: none;  visibility: hidden }
+.invisible { visibility: hidden}
+
+.no-all{
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	box-shadow: none ;
+}
+.no-radius{
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.no-shadow{
+	box-shadow: none ;
+}
+.no-border{
+	border: none;
+}
+
+/* float */
+.float-left,.pull-left{float:left; }
+.float-right,.pull-right{float:right;} 
 
 /* colors */
 .c-white,.c-white a{color:#fff}
@@ -75,9 +105,9 @@ button::-moz-focus-inner, input::-moz-focus-inner {border: 0;padding: 0;}
 /*font-family*/
 .ffw { font-family: 'Microsoft Yahei', "\5FAE\8F6F\96C5\9ED1"; }.ffs { font-family: Simsun, "\5b8b\4f53"; }
 /* font-style */
-.fn{font-weight:normal;font-style:normal;}.fb{font-weight:bold;}
+.fwn{font-weight:normal;font-style:normal;}.fwb{font-weight:bold;}
 /*text-align*/
-.tl,.text-left{text-align:left;}.tc,.text-center{text-align:center;}.tr,.text-right {text-align:right;}
+.tal,.text-left{text-align:left;}.tac,.text-center{text-align:center;}.tar,.text-right {text-align:right;}
 .text-justify { text-align: justify;}
 .text-nowrap { white-space: nowrap;}
 
@@ -94,9 +124,10 @@ button::-moz-focus-inner, input::-moz-focus-inner {border: 0;padding: 0;}
 .ml0{margin-left: 0px!important;}.ml5{margin-left: 5px!important;}.ml10{margin-left: 10px!important;}.ml15{margin-left: 15px!important;}.ml20{margin-left: 20px!important;}.ml25{margin-left: 25px!important;}.ml30{margin-left: 30px!important;}.ml40{margin-left: 40px!important;}
 .nobb{border-bottom-width: 0!important;}.nobr{border-right-width: 0!important;}.nobl{border-left-width: 0!important;}.nobt{border-top-width: 0!important;}.nobg{background: none!important;}
 
-/* float */
-.float-left,.pull-left{float:left; }
-.float-right,.pull-right{float:right;} 
+
+
+
+
 
 /*面包屑导航（Breadcrumbs）*/
 .breadcrumb {
@@ -545,8 +576,8 @@ output { display: block; padding-top: 7px; font-size: 14px; line-height: 1.42857
 .form-control {
   font-size: 14px; line-height: 1.42857143; color: #555; display: block; width: 100%; height: 34px; padding: 6px 12px;
   background-color: #fff; background-image: none; border: 1px solid #ccc; border-radius: 4px;
-  /*-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);*/ 
-  /*box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);*/
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075); 
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
   -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -1270,23 +1301,7 @@ a.badge:focus, a.badge:hover { color: #fff; text-decoration: none;cursor: pointe
   border-top-right-radius: 3px; border-bottom-right-radius: 3px;
 }
 
-.no-all{
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-	box-shadow: none ;
-}
-.no-radius{
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-}
-.no-shadow{
-	box-shadow: none ;
-}
-.no-border{
-	border: none;
-}
+
 .close {
   float: right; font-size: 22px; font-weight: bold; line-height: 1;
   color: #000; text-shadow: 0 1px 0 #fff;  filter: alpha(opacity=80); opacity: .8;
@@ -1304,6 +1319,7 @@ button.close {
 .arrow-right { border-left: 4px solid #000000;}
 .arrow-down {border-top: 4px solid #000000; vertical-align: -2px; }
 .arrow-left {border-right: 4px solid #000000; margin-left: -1px;}
+
 
 .clearfix:before,.clearfix:after,.wrap:before,.wrap:after, 
 .dl-horizontal dd:before,.dl-horizontal dd:after,
@@ -1330,11 +1346,6 @@ button.close {
   clear: both;
 }
 
-
-.hide { display: none !important;}
-.show { display: block !important;}
-.hidden { display: none!important;  visibility: hidden!important }
-.invisible { visibility: hidden}
 
 
 .edate{ background: transparent url(../images/icon-date.png) no-repeat 99% 50%;}

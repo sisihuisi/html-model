@@ -1,7 +1,18 @@
 $(function() {
-	
-  $('html,.boxscroll').niceScroll({ cursorcolor: '#444', cursorborder: '#000', cursorwidth: 10, railpadding: {right: 2} });
-	
+
+	$('body,.boxscroll').niceScroll({
+		cursorcolor: '#444',
+		cursorborder: '#000',
+		cursorwidth: 12,
+		autohidemode: true,
+		railpadding: {
+			top: 0,
+			right: 2,
+			left: 0,
+			bottom: 0
+		}
+	});
+
 	$('.table-sort').dataTable({
 		searching: true, //是否开启本地搜索
 		lengthChange: true, //是否允许用户改变表格每页显示的记录数
@@ -13,42 +24,50 @@ $(function() {
 			aTargets: [0, 5] // 指定列不参与排序
 		}]
 	});
-	
-	
+
+
 	//一般直接写在一个js文件中
 	layui.use(['table', 'layer'], function() {
-		var layuiTable = layui.table;
-		var layer = layui.layer;
+		var layuiTable = layui.table,
+			layer = layui.layer;
+
 		//第一个实例
 		layuiTable.render({
 			elem: '#demo',
 			height: 400,
 			width: 1000,
 			url: 'js/json/data.json',
-			done:function(res, curr, count){
-				$('.layui-table-box .layui-table-body').niceScroll({ 
-					cursorcolor: '#999', 
-					cursorborder: '#000', 
-					cursorwidth: 12, 
+			done: function(res, curr, count) {
+				$('.layui-table-box .layui-table-body').niceScroll({
+					cursorcolor: '#999',
+					cursorborder: '#000',
+					cursorwidth: 12,
 					autohidemode: false,
-					railpadding: {right:1} 
+					railpadding: {
+						top: 2,
+						right: 2,
+						left: 0,
+						bottom: 2
+					}
 				});
 			},
 			page: true, //开启分页
-//			size: "lg",
-//			even: true, //隔行变色
-//			skin: 'row',
+			//			size: "lg",
+			//			even: true, //隔行变色
+			//			skin: 'row',
 			//line （行边框风格） 
 			//row （列边框风格） 
 			//nob （无边框风格）
 			cols: [
 				[ //表头
-				    { type:'checkbox' },
+					{
+						type: 'checkbox'
+					},
 					{
 						field: 'id',
 						title: 'ID',
 						sort: true,
-//						fixed: 'left'
+						//						fixed: 'left'
 					}, {
 						field: 'username',
 						title: '用户名'
